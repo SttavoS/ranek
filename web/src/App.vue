@@ -1,32 +1,80 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+		<TheHeader />
+		<main>
+			<router-view/>
+		</main>
+		<TheFooter />
     </div>
-    <router-view/>
-  </div>
 </template>
 
+<script>
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
+
+export default {
+	name: 'App',
+	components: {
+		TheHeader,
+		TheFooter,
+	},
+};
+</script>
+
 <style>
+body, ul, li, h1, h2, p {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+body {
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	color: #345;
+	background: url('./assets/pattern.svg') repeat top;
+}
+
+a {
+	color: #345;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+.btn {
+	display: block;
+	padding: 10px 30px;
+	background-color: #87F;
+	border-radius: 4px;
+	color: #FFF;
+	text-align: center;
+	font-size: 1rem;
+	box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+	transition: all 0.3s;
+	border: none;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #65D;
+	transform: scale(1.1);
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+main {
+	flex: 1;
 }
 </style>

@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<section class="home">
+		<h1>👍 Compre ou Venda 👎</h1>
+		<ProductsSearch />
+		<ProductsList />
+	</section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import ProductsSearch from '@/components/ProductsSearch.vue';
+import ProductsList from '@/components/ProductsList.vue';
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld,
-  },
+	name: 'Home',
+	components: {
+		ProductsSearch,
+		ProductsList,
+	},
 };
 </script>
+
+<style scoped>
+h1 {
+	color: #87F;
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 40px;
+}
+</style>
