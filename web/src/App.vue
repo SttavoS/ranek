@@ -18,6 +18,11 @@ export default {
 		TheHeader,
 		TheFooter,
 	},
+	filters: {
+		formatedPrice(price) {
+			return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		},
+	},
 };
 </script>
 
@@ -76,5 +81,43 @@ img {
 
 main {
 	flex: 1;
+}
+
+input,
+textarea {
+	border-radius: 4px;
+	border: 1px solid white;
+	padding: 15px;
+	box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+	transition: all .3s;
+	font-size: 1rem;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	margin-bottom: 15px;
+}
+
+input:hover,
+input:focus,
+textarea:hover
+textarea:focus {
+	outline: none;
+	box-shadow: rgba(30, 60, 90, 0.2);
+	border-color: #87F;
+}
+
+.v-enter,
+.v-leave-to {
+	opacity: 0;
+}
+
+.v-enter {
+	transform: translate3d(0, -20px, 0);
+}
+
+.v-leave-to {
+	transform: translate3d(0, 20px, 0);
+}
+
+.v-enter-active, .v-leave-active {
+	transition: all .3s;
 }
 </style>

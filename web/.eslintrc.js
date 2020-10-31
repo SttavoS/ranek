@@ -4,14 +4,29 @@ module.exports = {
         node: true,
     },
     extends: [
-        'plugin:vue/essential',
-        '@vue/airbnb',
+        "plugin:vue/essential",
+        "@vue/airbnb",
     ],
     parserOptions: {
-        parser: 'babel-eslint',
+        parser: "babel-eslint",
     },
     rules: {
-		'indent': 0,
-		'no-tabs': 0,
+		"indent": [
+			"error",
+			"tab"
+		],
+		"no-tabs": [
+			"error",
+			{ allowIndentationTabs: true }
+		],
+		"no-restricted-syntax": 0,
+		"no-underscore-dangle":  0,
+		"no-restricted-globals": 0,
+		"guard-for-in": 0,
+		"no-plusplus": [
+			"error",
+			{ "allowForLoopAfterthoughts": true }
+		],
+		"arrow-body-style": 0
     },
 };
