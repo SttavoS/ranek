@@ -2,7 +2,9 @@
     <div id="app">
 		<TheHeader />
 		<main>
-			<router-view/>
+			<transition mode="out-in">
+				<router-view/>
+			</transition>
 		</main>
 		<TheFooter />
     </div>
@@ -17,11 +19,6 @@ export default {
 	components: {
 		TheHeader,
 		TheFooter,
-	},
-	filters: {
-		formatedPrice(price) {
-			return price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-		},
 	},
 };
 </script>
@@ -81,6 +78,10 @@ img {
 
 main {
 	flex: 1;
+}
+
+label {
+	margin-bottom: 5px;
 }
 
 input,

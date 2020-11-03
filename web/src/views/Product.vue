@@ -1,16 +1,16 @@
 <template>
 	<section>
 		<div v-if="product" class="product">
-			<ul class="product-images" v-if="product.fotos">
-				<li v-for="(foto, index) in product.fotos" :key="index">
-					<img :src="foto.src" :alt="foto.titulo">
+			<ul class="product-images" v-if="product.images">
+				<li v-for="(image, index) in product.images" :key="index">
+					<img :src="image.source" :alt="image.title">
 				</li>
 			</ul>
 			<div class="product-info">
-				<h1>{{product.nome}}</h1>
-				<p class="product-price">{{product.preco | formatedPrice}}</p>
-				<p class="product-description">{{product.descricao}}</p>
-				<button class="btn" v-if="product.vendido === 'false'">Comprar</button>
+				<h1>{{product.name}}</h1>
+				<p class="product-price">{{product.price | formatedPrice}}</p>
+				<p class="product-description">{{product.description}}</p>
+				<button class="btn" v-if="product.isSold === 'false'">Comprar</button>
 				<button class="btn" v-else disabled>Comprar</button>
 			</div>
 		</div>
@@ -31,7 +31,7 @@ export default {
 	},
 	methods: {
 		getProduct() {
-			api.get(`/produto/${this.id}`)
+			api.get(`/products/${this.id}`)
 				.then((response) => {
 					this.product = response.data;
 				});

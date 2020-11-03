@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '@/views/Home.vue';
 import Product from '@/views/Product.vue';
+import Login from '@/views/Login.vue';
+import Register from '@/views/Register.vue';
+import User from '@/views/User/User.vue';
 
 Vue.use(VueRouter);
 
@@ -19,6 +22,21 @@ const router = new VueRouter({
 			name: 'product',
 			component: Product,
 			props: true,
+		},
+		{
+			path: '/login',
+			name: 'login',
+			component: Login,
+		},
+		{
+			path: '/registrar',
+			name: 'register',
+			component: Register,
+		},
+		{
+			path: '/perfil',
+			name: 'user',
+			component: User,
 		},
 	],
 	scrollBehavior() {

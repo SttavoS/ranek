@@ -4,10 +4,14 @@
 			<div class="products" v-if="products && products.length" key="products">
 				<div class="product" v-for="product in products" :key="product.id">
 					<router-link :to="{name: 'product', params: {id: product.id}}">
-						<img v-if="product.fotos" :src="product.fotos[0].src" :alt="product.fotos[0].titulo">
-						<p class="product-price">{{product.preco | formatedPrice}}</p>
-						<h2 class="product-title">{{product.nome}}</h2>
-						<p>{{product.descricao}}</p>
+						<img
+							v-if="product.images"
+							:src="product.images[0].source"
+							:alt="product.images[0].title"
+						>
+						<p class="product-price">{{product.price | formatedPrice}}</p>
+						<h2 class="product-title">{{product.name}}</h2>
+						<p>{{product.description}}</p>
 					</router-link>
 				</div>
 				<ProductsPagination :productsTotal="productsTotal" :productsPerPage="productsPerPage"/>
@@ -23,7 +27,7 @@
 <script>
 import ProductsPagination from '@/components/Products/ProductsPagination.vue';
 import api from '@/services/api';
-import serialize from '@/helpers/index';
+import { serialize } from '@/helpers/index';
 
 export default {
 	name: 'ProductsList',
@@ -40,7 +44,7 @@ export default {
 	computed: {
 		url() {
 			const query = serialize(this.$route.query);
-			return `/produto?_limit=${this.productsPerPage}${query}`;
+			return `/products?_limit=${this.productsPerPage}${query}`;
 		},
 	},
 	watch: {
