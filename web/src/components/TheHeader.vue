@@ -7,7 +7,7 @@
 			<router-link
 				v-if="$store.state.login"
 				class="btn"
-				to="/perfil"
+				to="/user"
 			>
 				{{name}}
 			</router-link>

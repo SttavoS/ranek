@@ -1,13 +1,12 @@
 <template>
 	<section>
-		<h1>Página do usuário</h1>
+		<h1>Minhas Vendas</h1>
 	</section>
 </template>
 
 <script>
 export default {
-	name: 'User',
-
+	name: 'UserSales',
 };
 </script>
 

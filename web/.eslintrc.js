@@ -22,6 +22,8 @@ module.exports = {
 		"no-restricted-syntax": 0,
 		"no-underscore-dangle":  0,
 		"no-restricted-globals": 0,
+		"no-console": 0,
+		"no-alert": 0,
 		"guard-for-in": 0,
 		"no-plusplus": [
 			"error",

@@ -20,6 +20,7 @@ export default new Vuex.Store({
 			city: '',
 			state: '',
 		},
+		user_products: null,
 	},
 	mutations: {
 		UPDATE_LOGIN(state, payload) {
@@ -27,6 +28,12 @@ export default new Vuex.Store({
 		},
 		UPDATE_USER(state, payload) {
 			state.user = Object.assign(state.user, payload);
+		},
+		UPDATE_USER_PRODUCTS(state, payload) {
+			state.user_products = payload;
+		},
+		ADD_USER_PRODUCTS(state, payload) {
+			state.user_products.unshift(payload);
 		},
 	},
 	actions: {
@@ -41,6 +48,27 @@ export default new Vuex.Store({
 			/** TODO: Remove this after the real API has created */
 			context.commit('UPDATE_USER', { id: payload.email });
 			return api.post('/users', payload);
+		},
+		getUserProducts(context) {
+			api.get(`/products?user_id=${context.state.user.id}`)
+				.then((response) => {
+					context.commit('UPDATE_USER_PRODUCTS', response.data);
+				});
+		},
+		logoutUser(context) {
+			context.commit('UPDATE_USER', {
+				id: '',
+				name: '',
+				email: '',
+				password: '',
+				cep: '',
+				street: '',
+				number: '',
+				neighborhood: '',
+				city: '',
+				state: '',
+			});
+			context.commit('UPDATE_LOGIN', false);
 		},
 	},
 	modules: {

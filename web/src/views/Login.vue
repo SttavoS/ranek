@@ -50,7 +50,7 @@ export default {
 	methods: {
 		authenticate() {
 			this.$store.dispatch('getUser', this.login.email);
-			this.$router.push({ name: 'user' });
+			this.$router.push({ name: 'user.edit' });
 		},
 	},
 };
