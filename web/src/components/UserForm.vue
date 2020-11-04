@@ -1,26 +1,28 @@
 <template>
 	<form>
-		<label for="name">Nome</label>
-		<input
-			type="text"
-			id="name"
-			name="name"
-			v-model="name"
-		>
-		<label for="email">E-mail</label>
-		<input
-			type="email"
-			id="email"
-			name="email"
-			v-model="email"
-		>
-		<label for="password">Senha</label>
-		<input
-			type="password"
-			id="password"
-			name="password"
-			v-model="password"
-		>
+		<div v-if="showBasicUserData" class="user">
+			<label for="name">Nome</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				v-model="name"
+			>
+			<label for="email">E-mail</label>
+			<input
+				type="email"
+				id="email"
+				name="email"
+				v-model="email"
+			>
+			<label for="password">Senha</label>
+			<input
+				type="password"
+				id="password"
+				name="password"
+				v-model="password"
+			>
+		</div>
 		<label for="cep">Cep</label>
 		<input
 			type="text"
@@ -93,6 +95,9 @@ export default {
 			base: 'user',
 			mutation: 'UPDATE_USER',
 		}),
+		showBasicUserData() {
+			return !this.$store.state.login || this.$route.name === 'user.edit';
+		},
 	},
 	methods: {
 		setCep() {
@@ -112,10 +117,15 @@ export default {
 </script>
 
 <style scoped>
-form {
+form,
+.user {
 	display: grid;
 	grid-template-columns: 80px 1fr;
 	align-items: center;
+}
+
+.user {
+	grid-column: 1 / 3;
 }
 
 .button {

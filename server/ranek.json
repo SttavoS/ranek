@@ -14,15 +14,15 @@
     },
     {
       "id": "gustavo@gustavoschneider.com",
-      "email": "gustavo@gustavoschneider.com",
       "name": "Gustavo Schneider",
+      "email": "gustavo@gustavoschneider.com",
       "password": "12345",
-      "street": "Rua xxxx",
-      "cep": "12345678",
+      "cep": "95706186",
+      "street": "Rua Olivio Pelinser",
       "number": "133",
-      "neighborhood": "Vila Nova 2",
-      "state": "RS",
-      "city": "Bento Gonçalves"
+      "neighborhood": "Vila Nova II",
+      "city": "Bento Gonçalves",
+      "state": "RS"
     },
     {
       "id": "joaozinho123@gmail.com",
@@ -145,6 +145,30 @@
       "isSold": "false",
       "description": "Esse é um novo tablet.",
       "images": null
+    }
+  ],
+  "transaction": [
+    {
+      "buyer_id": "gustavo@gustavoschneider.com",
+      "seller_id": "andre@origamid.com",
+      "product": {
+        "id": 1,
+        "name": "Notebook",
+        "user_id": "andre@origamid.com",
+        "price": "4999",
+        "isSold": "false",
+        "description": "Esse é um novo notebook.",
+        "images": null
+      },
+      "address": {
+        "cep": "95706186",
+        "street": "Rua Olivio Pelinser",
+        "number": "133",
+        "neighborhood": "Vila Nova II",
+        "city": "Bento Gonçalves",
+        "state": "RS"
+      },
+      "id": 1
     }
   ]
 }

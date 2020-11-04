@@ -10,8 +10,17 @@
 				<h1>{{product.name}}</h1>
 				<p class="product-price">{{product.price | formatedPrice}}</p>
 				<p class="product-description">{{product.description}}</p>
-				<button class="btn" v-if="product.isSold === 'false'">Comprar</button>
-				<button class="btn" v-else disabled>Comprar</button>
+				<transition mode="out-in" v-if="product.isSold === 'false'">
+					<button
+						v-if="!toogleCheckoutForm"
+						@click="toogleCheckoutForm = true"
+						class="btn"
+					>
+						Comprar
+					</button>
+					<CheckOut v-else :product="product"/>
+				</transition>
+				<button class="btn" v-else disabled>Produto Vendido</button>
 			</div>
 		</div>
 		<PageLoading v-else/>
@@ -20,13 +29,18 @@
 
 <script>
 import api from '@/services/api';
+import CheckOut from '@/components/CheckOut.vue';
 
 export default {
 	name: 'Product',
 	props: ['id'],
+	components: {
+		CheckOut,
+	},
 	data() {
 		return {
 			product: Object,
+			toogleCheckoutForm: false,
 		};
 	},
 	methods: {

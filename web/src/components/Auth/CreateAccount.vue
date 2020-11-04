@@ -36,7 +36,7 @@ export default {
 				await this.$store.dispatch('getUser', this.$store.state.user.email);
 				this.$router.push({ name: 'user' });
 			} catch (error) {
-				// console.error(error);
+				console.error(error);
 			}
 		},
 	},
