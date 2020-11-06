@@ -14,7 +14,12 @@ import { mapState } from 'vuex';
 
 export default {
 	name: 'CheckOut',
-	props: ['product'],
+	props: {
+		product: {
+			type: Object,
+			required: true,
+		},
+	},
 	components: {
 		UserForm,
 	},

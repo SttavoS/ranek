@@ -33,7 +33,12 @@ import CheckOut from '@/components/CheckOut.vue';
 
 export default {
 	name: 'Product',
-	props: ['id'],
+	props: {
+		id: {
+			type: Number,
+			required: true,
+		},
+	},
 	components: {
 		CheckOut,
 	},

@@ -22,7 +22,12 @@
 <script>
 export default {
 	name: 'ProductItem',
-	props: ['product'],
+	props: {
+		product: {
+			type: Object,
+			required: true,
+		},
+	},
 };
 </script>
 
