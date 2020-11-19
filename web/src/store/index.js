@@ -37,8 +37,8 @@ export default new Vuex.Store({
 		},
 	},
 	actions: {
-		getUser(context, payload) {
-			return api.get(`/users/${payload}`)
+		getUser(context) {
+			return api.get('/user')
 				.then((response) => {
 					context.commit('UPDATE_USER', response.data);
 					context.commit('UPDATE_LOGIN', true);
@@ -47,7 +47,15 @@ export default new Vuex.Store({
 		createUser(context, payload) {
 			/** TODO: Remove this after the real API has created */
 			context.commit('UPDATE_USER', { id: payload.email });
-			return api.post('/users', payload);
+			return api.post('/user', payload);
+		},
+		authenticateUser(context, payload) {
+			return api.login({
+				username: payload.email,
+				password: payload.password,
+			}).then((response) => {
+				window.localStorage.token = `Bearer ${response.data.token}`;
+			});
 		},
 		getUserProducts(context) {
 			api.get(`/products?user_id=${context.state.user.id}`)

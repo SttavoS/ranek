@@ -1,7 +1,48 @@
 import axios from 'axios';
 
-const api = axios.create({
-	baseURL: 'http://localhost:3000',
+const axiosInstance = axios.create({
+	baseURL: 'http://ranekapi.local/wp-json/api',
 });
+
+axiosInstance.interceptors.request.use(
+	(config) => {
+		const { token } = window.localStorage.token;
+
+		if (token) {
+			config.headers.Authorization = token;
+		}
+
+		return config;
+	},
+	(error) => {
+		return Promise.reject(error);
+	},
+);
+
+const api = {
+	get(endpoint) {
+		return axiosInstance.get(endpoint);
+	},
+	post(endpoint, body) {
+		return axiosInstance.post(endpoint, body);
+	},
+	put(endpoint, body) {
+		return axiosInstance.put(endpoint, body);
+	},
+	delete(endpoint) {
+		return axiosInstance.delete(endpoint);
+	},
+	login(body) {
+		return axios.post(
+			'http://ranekapi.local/wp-json/jwt-auth/v1/token',
+			body,
+		);
+	},
+	validateToken() {
+		return axiosInstance.post(
+			'http://ranekapi.local/wp-json/jwt-auth/v1/token/validate',
+		);
+	},
+};
 
 export default api;

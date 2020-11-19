@@ -35,7 +35,7 @@ export default {
 	name: 'Product',
 	props: {
 		id: {
-			type: Number,
+			type: String,
 			required: true,
 		},
 	},
@@ -44,13 +44,13 @@ export default {
 	},
 	data() {
 		return {
-			product: Object,
+			product: {},
 			toogleCheckoutForm: false,
 		};
 	},
 	methods: {
 		getProduct() {
-			api.get(`/products/${this.id}`)
+			api.get(`/product/${this.id}`)
 				.then((response) => {
 					this.product = response.data;
 				});
