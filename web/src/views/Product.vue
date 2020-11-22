@@ -1,16 +1,16 @@
 <template>
 	<section>
 		<div v-if="product" class="product">
-			<ul class="product-images" v-if="product.images">
-				<li v-for="(image, index) in product.images" :key="index">
-					<img :src="image.source" :alt="image.title">
+			<ul class="product-images" v-if="product.images.length > 0">
+				<li v-for="image in product.images" :key="image.id">
+					<img :src="image.path">
 				</li>
 			</ul>
 			<div class="product-info">
 				<h1>{{product.name}}</h1>
 				<p class="product-price">{{product.price | formatedPrice}}</p>
 				<p class="product-description">{{product.description}}</p>
-				<transition mode="out-in" v-if="product.isSold === 'false'">
+				<transition mode="out-in" v-if="product.sold === 0">
 					<button
 						v-if="!toogleCheckoutForm"
 						@click="toogleCheckoutForm = true"
@@ -34,7 +34,7 @@ import CheckOut from '@/components/CheckOut.vue';
 export default {
 	name: 'Product',
 	props: {
-		id: {
+		slug: {
 			type: String,
 			required: true,
 		},
@@ -50,9 +50,9 @@ export default {
 	},
 	methods: {
 		getProduct() {
-			api.get(`/product/${this.id}`)
+			api.get(`/product/${this.slug}`)
 				.then((response) => {
-					this.product = response.data;
+					this.product = response.data.product;
 				});
 		},
 	},

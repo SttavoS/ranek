@@ -7,6 +7,7 @@
 			v-if="user_products"
 			name="list"
 			tag="ul"
+			key="product_list"
 		>
 			<li v-for="product in user_products" :key="product.id">
 				<ProductItem :product="product" >

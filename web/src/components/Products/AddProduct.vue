@@ -14,8 +14,8 @@
 		>
 		<label for="images">Fotos</label>
 		<input
-			type="file"
-			name="images" id="images"
+			type="file" multiple
+			name="images[]" id="images"
 			ref="images"
 		>
 		<label for="description">Descrição</label>
@@ -42,7 +42,7 @@ export default {
 			product: {
 				name: '',
 				price: '',
-				isSold: 'false',
+				sold: 0,
 				description: '',
 				user_id: '',
 				images: null,
@@ -56,7 +56,7 @@ export default {
 		},
 		addProduct() {
 			this.formatProduct();
-			api.post('/products', this.product)
+			api.post('/product', this.product)
 				.then(() => {
 					this.$store.dispatch('getUserProducts');
 				});

@@ -3,11 +3,10 @@
 		<transition mode="out-in">
 			<div class="products" v-if="products && products.length" key="products">
 				<div class="product" v-for="product in products" :key="product.id">
-					<router-link :to="{name: 'product', params: {id: product.id}}">
+					<router-link :to="{name: 'product', params: {slug: product.slug}}">
 						<img
 							v-if="product.images"
-							:src="product.images[0].source"
-							:alt="product.images[0].title"
+							:src="product.images[0].path"
 						>
 						<p class="product-price">{{product.price | formatedPrice}}</p>
 						<h2 class="product-title">{{product.name}}</h2>
@@ -16,7 +15,7 @@
 				</div>
 				<ProductsPagination :productsTotal="productsTotal" :productsPerPage="productsPerPage"/>
 			</div>
-			<div v-else-if="products && products.length === 0" key="no-results">
+			<div v-else-if="products && products.total === 0" key="no-results">
 				<p class="no-results">Busca sem resultados. Tente buscar outro termo.</p>
 			</div>
 			<PageLoading v-else key="loading"/>
@@ -36,9 +35,9 @@ export default {
 	},
 	data() {
 		return {
-			products: Object,
+			products: {},
 			productsPerPage: 9,
-			productsTotal: Number,
+			productsTotal: 0,
 		};
 	},
 	computed: {
@@ -58,13 +57,11 @@ export default {
 	methods: {
 		getProducts() {
 			this.products = null;
-			setTimeout(() => {
-				api.get(this.url)
-					.then((response) => {
-						this.productsTotal = Number(response.headers['x-total-count']);
-						this.products = response.data;
-					});
-			}, 1500);
+			api.get('/products')
+				.then((response) => {
+					this.productsTotal = response.data.total;
+					this.products = response.data.products.data;
+				});
 		},
 	},
 };

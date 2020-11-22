@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -23,12 +23,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('auth/login', [AuthController::class, 'login']);
 
-Route::group(['middleware' => ['apiJwt']], function(){
-    Route::post('auth/logout', [AuthController::class, 'logout']);
-    Route::post('auth/refresh', [AuthController::class, 'refresh']);
-    Route::get('auth/me', [AuthController::class, 'me']);
+Route::group(['middleware' => ['apiJwt']], function () {
+    Route::post('auth/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('auth/refresh', [AuthController::class, 'refresh'])->name('refresh.token');
+    Route::post('auth/me', [AuthController::class, 'me'])->name('user.me');
 
-    Route::get('products', [ProductController::class, 'index']);
+    Route::get('user/{id}/products', [UserController::class, 'getUserProducts'])->name('user.products');
 
-    Route::post('users', [UserController::class, 'store']);
+    Route::post('product', [ProductController::class, 'store'])->name('product.store');
+    Route::put('product/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('product/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 });
+
+Route::get('products', [ProductController::class, 'index']);
+Route::get('product/{slug}', [ProductController::class, 'show']);
+
+Route::post('user', [UserController::class, 'store'])->name('user.store');

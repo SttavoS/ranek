@@ -64,10 +64,13 @@ export default new Vuex.Store({
 			return api.post('/user', payload);
 		},
 		getUserProducts(context) {
-			api.get(`/products?user_id=${context.state.user.id}`)
-				.then((response) => {
-					context.commit('UPDATE_USER_PRODUCTS', response.data);
-				});
+			api.get(`/user/${context.state.user.id}/products`, {
+				headers: {
+					Authorization: localStorage.getItem('token'),
+				},
+			}).then((response) => {
+				context.commit('UPDATE_USER_PRODUCTS', response.data.user_products);
+			});
 		},
 		logoutUser(context) {
 			context.commit('UPDATE_USER', {
