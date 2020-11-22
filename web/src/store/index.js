@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import api from '@/services/api';
 
 Vue.use(Vuex);
@@ -8,17 +9,19 @@ export default new Vuex.Store({
 	strict: true,
 	state: {
 		login: false,
+		token: localStorage.getItem('token') || '',
 		user: {
-			id: '',
-			name: '',
-			email: '',
-			password: '',
-			cep: '',
-			street: '',
-			number: '',
-			neighborhood: '',
-			city: '',
-			state: '',
+			// id: '',
+			// name: '',
+			// email: '',
+			// email_verified_at: '',
+			// password: '',
+			// cep: '',
+			// street: '',
+			// number: '',
+			// neighborhood: '',
+			// city: '',
+			// state: '',
 		},
 		user_products: null,
 	},
@@ -27,7 +30,7 @@ export default new Vuex.Store({
 			state.login = payload;
 		},
 		UPDATE_USER(state, payload) {
-			state.user = Object.assign(state.user, payload);
+			state.user = payload;
 		},
 		UPDATE_USER_PRODUCTS(state, payload) {
 			state.user_products = payload;
@@ -38,24 +41,27 @@ export default new Vuex.Store({
 	},
 	actions: {
 		getUser(context) {
-			return api.get('/user')
+			return api.post('/auth/me')
 				.then((response) => {
+					console.log(response);
 					context.commit('UPDATE_USER', response.data);
 					context.commit('UPDATE_LOGIN', true);
 				});
 		},
-		createUser(context, payload) {
-			/** TODO: Remove this after the real API has created */
-			context.commit('UPDATE_USER', { id: payload.email });
-			return api.post('/user', payload);
-		},
 		authenticateUser(context, payload) {
-			return api.login({
-				username: payload.email,
+			return api.post('/auth/login', {
+				email: payload.email,
 				password: payload.password,
 			}).then((response) => {
-				window.localStorage.token = `Bearer ${response.data.token}`;
+				localStorage.setItem('token', `Bearer ${response.data.access_token}`);
+				context.commit('UPDATE_USER', response.data.user);
+				context.commit('UPDATE_LOGIN', true);
 			});
+		},
+		createUser(context, payload) {
+			// TODO: Remove this after the real API has created
+			context.commit('UPDATE_USER', { id: payload.email });
+			return api.post('/user', payload);
 		},
 		getUserProducts(context) {
 			api.get(`/products?user_id=${context.state.user.id}`)
@@ -81,4 +87,5 @@ export default new Vuex.Store({
 	},
 	modules: {
 	},
+	plugins: [createPersistedState()],
 });

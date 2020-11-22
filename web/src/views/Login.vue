@@ -48,10 +48,9 @@ export default {
 		};
 	},
 	methods: {
-		authenticate() {
-			this.$store.dispatch('authenticateUser', this.login)
+		async authenticate() {
+			await this.$store.dispatch('authenticateUser', this.login)
 				.then((response) => {
-					this.$store.dispatch('getUser');
 					this.$router.push({ name: 'user.edit' });
 				});
 		},

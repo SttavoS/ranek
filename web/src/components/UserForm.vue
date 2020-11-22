@@ -101,15 +101,18 @@ export default {
 	},
 	methods: {
 		setCep() {
-			const cep = this.cep.replace(/\D/g, '');
-			if (cep.length === 8) {
-				getCep(cep)
-					.then((response) => {
-						this.street = response.data.logradouro;
-						this.neighborhood = response.data.bairro;
-						this.city = response.data.localidade;
-						this.state = response.data.uf;
-					});
+			if (this.cep) {
+				const cep = this.cep.replace(/\D/g, '');
+
+				if (cep.length === 8) {
+					getCep(cep)
+						.then((response) => {
+							this.street = response.data.logradouro;
+							this.neighborhood = response.data.bairro;
+							this.city = response.data.localidade;
+							this.state = response.data.uf;
+						});
+				}
 			}
 		},
 	},

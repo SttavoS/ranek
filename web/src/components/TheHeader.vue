@@ -9,7 +9,7 @@
 				class="btn"
 				to="/user"
 			>
-				{{name}}
+				{{ name }}
 			</router-link>
 			<router-link
 				v-else
