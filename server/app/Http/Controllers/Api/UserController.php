@@ -19,7 +19,18 @@ class UserController extends Controller
         $user->save();
 
         return response()->json([
-            'user' => $user
+            'user' => $user,
         ], Response::HTTP_OK);
+    }
+
+    public function getUserProducts($id)
+    {
+        $user = User::find($id);
+
+        $user_products = $user->products()->get();
+
+        return response()->json([
+            'user_products' => $user_products,
+        ]);
     }
 }
