@@ -21,6 +21,7 @@
 		<label for="description">Descrição</label>
 		<textarea
 			name="description" id="description"
+			v-model="product.description"
 		>
 		</textarea>
 		<input
@@ -42,21 +43,25 @@ export default {
 			product: {
 				name: '',
 				price: '',
-				sold: 0,
 				description: '',
-				user_id: '',
 				images: null,
 			},
 			images: [],
 		};
 	},
 	methods: {
-		formatProduct() {
-			this.product.user_id = this.$store.state.user.id;
-		},
 		addProduct() {
-			this.formatProduct();
-			api.post('/product', this.product)
+			const data = new FormData();
+			data.append('name', this.product.name);
+			data.append('price', this.product.price);
+			data.append('description', this.product.description);
+
+			const images = this.$refs.images.files;
+			images.forEach((image) => {
+				data.append('images[]', image);
+			});
+
+			api.post('/product', data)
 				.then(() => {
 					this.$store.dispatch('getUserProducts');
 				});
