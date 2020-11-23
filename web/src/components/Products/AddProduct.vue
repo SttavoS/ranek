@@ -56,8 +56,8 @@ export default {
 			data.append('price', this.product.price);
 			data.append('description', this.product.description);
 
-			const images = this.$refs.images.files;
-			images.forEach((image) => {
+			const files = this.$refs.images.files;
+			files.forEach((image) => {
 				data.append('images[]', image);
 			});
 
