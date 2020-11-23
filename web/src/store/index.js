@@ -9,27 +9,14 @@ export default new Vuex.Store({
 	strict: true,
 	state: {
 		login: false,
-		token: localStorage.getItem('token') || '',
-		user: {
-			// id: '',
-			// name: '',
-			// email: '',
-			// email_verified_at: '',
-			// password: '',
-			// cep: '',
-			// street: '',
-			// number: '',
-			// neighborhood: '',
-			// city: '',
-			// state: '',
-		},
+		user: {},
 		user_products: null,
 	},
 	mutations: {
-		UPDATE_LOGIN(state, payload) {
+		SET_LOGIN(state, payload) {
 			state.login = payload;
 		},
-		UPDATE_USER(state, payload) {
+		SET_USER(state, payload) {
 			state.user = payload;
 		},
 		UPDATE_USER_PRODUCTS(state, payload) {
@@ -44,8 +31,8 @@ export default new Vuex.Store({
 			return api.post('/auth/me')
 				.then((response) => {
 					console.log(response);
-					context.commit('UPDATE_USER', response.data);
-					context.commit('UPDATE_LOGIN', true);
+					context.commit('SET_USER', response.data.user);
+					context.commit('SET_LOGIN', true);
 				});
 		},
 		authenticateUser(context, payload) {
@@ -54,38 +41,25 @@ export default new Vuex.Store({
 				password: payload.password,
 			}).then((response) => {
 				localStorage.setItem('token', `Bearer ${response.data.access_token}`);
-				context.commit('UPDATE_USER', response.data.user);
-				context.commit('UPDATE_LOGIN', true);
+				context.commit('SET_USER', response.data.user);
+				context.commit('SET_LOGIN', true);
 			});
 		},
 		createUser(context, payload) {
 			// TODO: Remove this after the real API has created
-			context.commit('UPDATE_USER', { id: payload.email });
+			context.commit('SET_USER', { id: payload.email });
 			return api.post('/user', payload);
 		},
 		getUserProducts(context) {
-			api.get(`/user/${context.state.user.id}/products`, {
-				headers: {
-					Authorization: localStorage.getItem('token'),
-				},
-			}).then((response) => {
-				context.commit('UPDATE_USER_PRODUCTS', response.data.user_products);
-			});
+			api.get(`/user/${context.state.user.id}/products`)
+				.then((response) => {
+					context.commit('UPDATE_USER_PRODUCTS', response.data.user_products);
+				});
 		},
 		logoutUser(context) {
-			context.commit('UPDATE_USER', {
-				id: '',
-				name: '',
-				email: '',
-				password: '',
-				cep: '',
-				street: '',
-				number: '',
-				neighborhood: '',
-				city: '',
-				state: '',
-			});
-			context.commit('UPDATE_LOGIN', false);
+			context.commit('SET_USER', null);
+			context.commit('SET_LOGIN', false);
+			localStorage.removeItem('token');
 		},
 	},
 	modules: {
