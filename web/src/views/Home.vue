@@ -16,6 +16,9 @@ export default {
 		ProductsSearch,
 		ProductsList,
 	},
+	mounted() {
+		document.title = 'Ranek';
+	}
 };
 </script>
 

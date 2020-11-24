@@ -53,12 +53,13 @@
 				api.get(`/product/${this.slug}`)
 					.then((response) => {
 						this.product = response.data.product;
+						document.title = this.product.name;
 					});
 			},
 		},
 		created() {
 			this.getProduct();
-		},
+		}
 	};
 </script>
 
