@@ -23,6 +23,7 @@
 			>
 				Logar
 			</button>
+			<ErrorMessage :errors="errors" />
 		</form>
 		<p class="forgot-password">
 			<a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
@@ -33,11 +34,13 @@
 
 <script>
 import CreateAccount from '@/components/Auth/CreateAccount.vue';
+import ErrorMessage from '@/components/ErrorMessage';
 
 export default {
 	name: 'Login',
 	components: {
 		CreateAccount,
+		ErrorMessage
 	},
 	data() {
 		return {
@@ -45,13 +48,19 @@ export default {
 				email: '',
 				password: '',
 			},
+			errors: []
 		};
 	},
 	methods: {
 		async authenticate() {
+			this.errors = [];
 			await this.$store.dispatch('authenticateUser', this.login)
-				.then((response) => {
+				.then(() => {
 					this.$router.push({ name: 'user.edit' });
+				})
+				.catch((error) => {
+					console.log(error);
+					this.errors.push(error.response.data.message);
 				});
 		},
 	},
