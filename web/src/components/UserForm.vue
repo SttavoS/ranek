@@ -74,27 +74,27 @@
 </template>
 
 <script>
-import { mapFields } from '@/helpers/index';
+// import { mapFields } from '@/helpers/index';
 import getCep from '@/services/cep';
 
 export default {
 	name: 'UserForm',
 	computed: {
-		...mapFields({
-			fields: [
-				'name',
-				'email',
-				'password',
-				'cep',
-				'street',
-				'number',
-				'neighborhood',
-				'city',
-				'state',
-			],
-			base: 'user',
-			mutation: 'UPDATE_USER',
-		}),
+		// ...mapFields({
+		// 	fields: [
+		// 		'name',
+		// 		'email',
+		// 		'password',
+		// 		'cep',
+		// 		'street',
+		// 		'number',
+		// 		'neighborhood',
+		// 		'city',
+		// 		'state',
+		// 	],
+		// 	base: 'user',
+		// 	mutation: 'UPDATE_USER',
+		// }),
 		showBasicUserData() {
 			return !this.$store.state.login || this.$route.name === 'user.edit';
 		},
