@@ -25,6 +25,7 @@ form {
 	max-width: 600px;
 	margin: 30px auto 60px auto;
 	position: relative;
+	padding: 0 10px;
 }
 
 #search {
@@ -40,7 +41,7 @@ form {
 #magnifier {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -40px;
 	width: 62px;
 	height:62px;
 	background: url('../../assets/search.svg') no-repeat center;

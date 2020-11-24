@@ -1,7 +1,7 @@
 <template>
 	<section class="products-container">
 		<transition mode="out-in">
-			<div class="products" v-if="products && products.length" key="products">
+			<div class="products" v-if="products && products.length > 0" key="products">
 				<div class="product" v-for="product in products" :key="product.id">
 					<router-link :to="{name: 'product', params: {slug: product.slug}}">
 						<img
@@ -111,5 +111,13 @@ export default {
 
 .no-results {
 	text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+	.products {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+		margin: 10px;
+	}
 }
 </style>

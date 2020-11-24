@@ -8,7 +8,6 @@
 				v-if="product.images"
 				:src="product.images[0].path"
 			>
-			<p>Ver Produto</p>
 		</router-link>
 		<div class="info">
 			<p class="price">{{product.price | formatedPrice}}</p>
@@ -47,5 +46,12 @@ export default {
 	border-radius: 4px;
 	overflow: hidden;
 	height: 100px;
+}
+
+@media screen and (max-width: 500px){
+	.product {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+	}
 }
 </style>

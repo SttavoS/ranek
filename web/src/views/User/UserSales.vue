@@ -88,4 +88,11 @@ h3 {
 	grid-template-columns: minmax(100px, 200px) 1fr;
 	grid-gap: 20px;
 }
+
+@media screen and (max-width: 500px) {
+	.delivery {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+	}
+}
 </style>
