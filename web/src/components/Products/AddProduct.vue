@@ -50,7 +50,7 @@ export default {
 		};
 	},
 	methods: {
-		addProduct() {
+		addProduct(event) {
 			const data = new FormData();
 			data.append('name', this.product.name);
 			data.append('price', this.product.price);
@@ -61,10 +61,17 @@ export default {
 				data.append('images[]', image);
 			});
 
+			const button = event.currentTarget;
+			button.value = 'Adcionando...';
+			button.setAttribute('disabled', '');
+
 			api.post('/product', data)
 				.then(() => {
 					this.$store.dispatch('getUserProducts');
 				});
+
+			button.removeAttribute('disabled');
+			button.value = 'Adicionar';
 		},
 	},
 };
