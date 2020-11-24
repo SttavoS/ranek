@@ -16,6 +16,7 @@ export default [
 	{
 		path: '/user',
 		component: Profile,
+		meta: { auth: true },
 		children: [
 			{ path: '', name: 'user.edit', component: EditProfile },
 			{ path: 'produtos', name: 'user.products', component: UserProducts },
