@@ -7,9 +7,11 @@ import UserProducts from '@/views/User/UserProducts.vue';
 import UserPurchases from '@/views/User/UserPurchases.vue';
 import UserSales from '@/views/User/UserSales.vue';
 import EditProfile from '@/views/User/EditProfile.vue';
+import PageNotFount from '@/views/errors/PageNotFount.vue';
 
 export default [
-	{ path: '/', name: 'Home', component: Home },
+	{ path: '*', component: PageNotFount },
+	{ path: '/', name: 'home', component: Home },
 	{ path: '/produto/:slug', name: 'product', component: Product, props: true },
 	{ path: '/login', name: 'login', component: Login },
 	{ path: '/registrar', name: 'register', component: Register },
