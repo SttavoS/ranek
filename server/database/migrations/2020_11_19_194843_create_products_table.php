@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->integer('price');
             $table->text('description');
-            $table->boolean('sold');
+            $table->boolean('sold')->default(false);
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
