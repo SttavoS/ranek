@@ -2325,9 +2325,120 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Products/Pagination.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Gustavo\\Desktop\\www\\ranek\\resources\\js\\components\\Products\\Pagination.vue: Const declarations require an initialization value (70:26)\n\n\u001b[0m \u001b[90m 68 | \u001b[39m            \u001b[36mconst\u001b[39m totalPages \u001b[33m=\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mceil(collectionLength \u001b[33m/\u001b[39m rowsPerPage)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 69 | \u001b[39m            \u001b[36mconst\u001b[39m halfWay \u001b[33m=\u001b[39m \u001b[33mMath\u001b[39m\u001b[33m.\u001b[39mceil(paginationRange \u001b[33m/\u001b[39m \u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 70 | \u001b[39m            \u001b[36mconst\u001b[39m position\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 71 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 72 | \u001b[39m            \u001b[36mif\u001b[39m (currentPage \u001b[33m<=\u001b[39m halfWay) {\u001b[0m\n\u001b[0m \u001b[90m 73 | \u001b[39m                position \u001b[33m=\u001b[39m \u001b[32m'start'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:748:17)\n    at Parser.raiseWithData (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:741:17)\n    at Parser.raise (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:735:17)\n    at Parser.parseVar (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:12320:18)\n    at Parser.parseVarStatement (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:12125:10)\n    at Parser.parseStatementContent (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11717:21)\n    at Parser.parseStatement (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11650:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:12232:25)\n    at Parser.parseBlockBody (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:12218:10)\n    at Parser.parseBlock (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:12202:10)\n    at Parser.parseFunctionBody (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11194:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11178:10)\n    at Parser.parseMethod (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11128:10)\n    at Parser.parseObjectMethod (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11057:19)\n    at Parser.parseObjPropValue (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11090:23)\n    at Parser.parsePropertyDefinition (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11014:10)\n    at Parser.parseObjectLike (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10904:25)\n    at Parser.parseExprAtom (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10464:23)\n    at Parser.parseExprSubscripts (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10122:23)\n    at Parser.parseUpdate (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10102:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10091:17)\n    at Parser.parseExprOps (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:9961:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:9935:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:9898:21)\n    at C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:9865:39\n    at Parser.allowInAnd (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11521:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:9865:17)\n    at Parser.parseObjectProperty (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11065:101)\n    at Parser.parseObjPropValue (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11090:100)\n    at Parser.parsePropertyDefinition (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:11014:10)\n    at Parser.parseObjectLike (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10904:25)\n    at Parser.parseExprAtom (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10464:23)\n    at Parser.parseExprSubscripts (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10122:23)\n    at Parser.parseUpdate (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10102:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:10091:17)\n    at Parser.parseExprOps (C:\\Users\\Gustavo\\Desktop\\www\\ranek\\node_modules\\@babel\\parser\\lib\\index.js:9961:23)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Pagination',
+  props: {
+    source: {
+      type: Object,
+      required: true
+    }
+  },
+  watch: {
+    source: function source() {
+      this.pages = this.generatePagesArray(this.source.currentPage, this.source.total, this.source.per_page, 12);
+    }
+  },
+  computed: {
+    pages: function pages() {
+      return this.generatePagesArray(this.source.currentPage, this.source.total, this.source.per_page, 12);
+    }
+  },
+  methods: {
+    navigate: function navigate(event, page) {
+      this.$emit('navigate', page);
+    },
+    nextPrev: function nextPrev(event, page) {
+      if (page == 0 || page == this.source.last_page + 1) {
+        return false;
+      }
+
+      this.navigate(event, page);
+    },
+    generatePagesArray: function generatePagesArray(currentPage, collectionLength, rowsPerPage, paginationRange) {
+      var pages = [];
+      var totalPages = Math.ceil(collectionLength / rowsPerPage);
+      var halfWay = Math.ceil(paginationRange / 2);
+      var position = '';
+
+      if (currentPage <= halfWay) {
+        position = (_readOnlyError("position"), 'start');
+      } else if (totalPages - halfWay < currentPage) {
+        position = (_readOnlyError("position"), 'end');
+      } else {
+        position = (_readOnlyError("position"), 'middle');
+      }
+
+      var ellipsesNeeded = paginationRange < totalPages;
+      var i = 1;
+
+      while (i <= totalPages && i <= paginationRange) {
+        var pageNumber = this.calculatePageNumber(i, currentPage, paginationRange, totalPages);
+        var openingEllipsesNeeded = i === 2 && (position === 'middle' || position === 'end');
+        var closingEllipsesNeeded = i === paginationRange - 1 && (position === 'middle' || position === 'start');
+
+        if (ellipsesNeeded && (openingEllipsesNeeded || closingEllipsesNeeded)) {
+          pages.push('...');
+        } else {
+          pages.push(pageNumber);
+        }
+
+        _readOnlyError("i"), i++;
+      }
+
+      return pages;
+    },
+    calculatePageNumber: function calculatePageNumber(i, currentPage, paginationRange, totalPages) {
+      var halfWay = Math.ceil(paginationRange / 2);
+
+      if (i === paginationRange) {
+        return totalPages;
+      } else if (i === 1) {
+        return i;
+      } else if (paginationRange < totalPages) {
+        if (totalPages - halfWay < currentPage) {
+          return totalPages - paginationRange + i;
+        } else if (halfWay < currentPage) {
+          return currentPage - halfWay + i;
+        } else {
+          return i;
+        }
+      } else {
+        return i;
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -25043,14 +25154,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/Products/Pagination.vue ***!
   \*********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pagination_vue_vue_type_template_id_53db7eac_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pagination.vue?vue&type=template&id=53db7eac&scoped=true& */ "./resources/js/components/Products/Pagination.vue?vue&type=template&id=53db7eac&scoped=true&");
 /* harmony import */ var _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pagination.vue?vue&type=script&lang=js& */ "./resources/js/components/Products/Pagination.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Pagination_vue_vue_type_style_index_0_id_53db7eac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css& */ "./resources/js/components/Products/Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _Pagination_vue_vue_type_style_index_0_id_53db7eac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css& */ "./resources/js/components/Products/Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -25082,7 +25194,7 @@ component.options.__file = "resources/js/components/Products/Pagination.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/Products/Pagination.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
