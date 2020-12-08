@@ -67,7 +67,7 @@
                 const pages = [];
                 const totalPages = Math.ceil(collectionLength / rowsPerPage);
                 const halfWay = Math.ceil(paginationRange / 2);
-                const position;
+                const position = '';
 
                 if (currentPage <= halfWay) {
                     position = 'start';
