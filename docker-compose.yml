@@ -1,0 +1,72 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: gustavo
+        uid: 1000
+      context: ./
+      dockerfile: .docker/Dockerfile
+    image: ranek
+    container_name: ranek-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - ranek
+
+  db:
+    image: postgres:12.4-alpine
+    container_name: ranek-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ranek
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: docker
+    volumes:
+      - ./.docker/data/postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - ranek
+
+  pgadmin-compose:
+    image: dpage/pgadmin4
+    container_name: ranek-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "example@example"
+      PGADMIN_DEFAULT_PASSWORD: "pgadmin1234"
+    ports:
+      - "15432:80"
+    depends_on:
+      - db
+    networks:
+      - ranek
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: ranek-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx:/etc/nginx/conf.d
+    networks:
+      - ranek
+
+  node:
+    image: node:15.3.0-alpine3.10
+    container_name: ranek-node
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - ranek
+
+networks:
+  ranek:
+    driver: bridge
+
