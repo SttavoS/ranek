@@ -2329,8 +2329,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
-
 //
 //
 //
@@ -2389,14 +2387,14 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
       var pages = [];
       var totalPages = Math.ceil(collectionLength / rowsPerPage);
       var halfWay = Math.ceil(paginationRange / 2);
-      var position = '';
+      var position;
 
       if (currentPage <= halfWay) {
-        position = (_readOnlyError("position"), 'start');
+        position = 'start';
       } else if (totalPages - halfWay < currentPage) {
-        position = (_readOnlyError("position"), 'end');
+        position = 'end';
       } else {
-        position = (_readOnlyError("position"), 'middle');
+        position = 'middle';
       }
 
       var ellipsesNeeded = paginationRange < totalPages;
@@ -2413,7 +2411,7 @@ function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-on
           pages.push(pageNumber);
         }
 
-        _readOnlyError("i"), i++;
+        i++;
       }
 
       return pages;
@@ -3482,7 +3480,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "\nbody, ul, li, h1, h2, p {\r\n\tpadding: 0;\r\n\tmargin: 0;\r\n\tbox-sizing: border-box;\n}\nul {\r\n\tlist-style: none;\n}\nbody {\r\n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\r\n\tcolor: #345;\r\n\tbackground: url(" + escape(__webpack_require__(/*! ./assets/pattern.svg */ "./resources/js/assets/pattern.svg")) + ") repeat top;\n}\na {\r\n\tcolor: #345;\r\n\ttext-decoration: none;\n}\nimg {\r\n\tmax-width: 100%;\r\n\tdisplay: block;\n}\n.btn {\r\n\tdisplay: block;\r\n\tpadding: 10px 30px;\r\n\tbackground-color: #87F;\r\n\tborder-radius: 4px;\r\n\tcolor: #FFF;\r\n\ttext-align: center;\r\n\tfont-size: 1rem;\r\n\tbox-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);\r\n\ttransition: all 0.3s;\r\n\tborder: none;\r\n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\r\n\tcursor: pointer;\n}\n.btn:hover {\r\n\tbackground-color: #65D;\r\n\ttransform: scale(1.1);\n}\n.btn-disabled,\r\n.btn-disabled:hover {\r\n\tbackground-color: #BBC;\r\n\ttransform: scale(1);\n}\n#app {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tmin-height: 100vh;\n}\nmain {\r\n\tflex: 1;\n}\nlabel {\r\n\tmargin-bottom: 5px;\n}\ninput,\r\ntextarea {\r\n\tborder-radius: 4px;\r\n\tborder: 1px solid white;\r\n\tpadding: 15px;\r\n\tbox-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);\r\n\ttransition: all .3s;\r\n\tfont-size: 1rem;\r\n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\r\n\tmargin-bottom: 15px;\r\n\twidth: 100%;\n}\ninput:hover,\r\ninput:focus,\r\ntextarea:hover\r\ntextarea:focus {\r\n\toutline: none;\r\n\tbox-shadow: rgba(30, 60, 90, 0.2);\r\n\tborder-color: #87F;\n}\n.v-enter,\r\n.v-leave-to {\r\n\topacity: 0;\n}\n.v-enter {\r\n\ttransform: translate3d(0, -20px, 0);\n}\n.v-leave-to {\r\n\ttransform: translate3d(0, 20px, 0);\n}\n.v-enter-active, .v-leave-active {\r\n\ttransition: all .3s;\n}\r\n", ""]);
+exports.push([module.i, "\nbody, ul, li, h1, h2, p {\n\tpadding: 0;\n\tmargin: 0;\n\tbox-sizing: border-box;\n}\nul {\n\tlist-style: none;\n}\nbody {\n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\n\tcolor: #345;\n\tbackground: url(" + escape(__webpack_require__(/*! ./assets/pattern.svg */ "./resources/js/assets/pattern.svg")) + ") repeat top;\n}\na {\n\tcolor: #345;\n\ttext-decoration: none;\n}\nimg {\n\tmax-width: 100%;\n\tdisplay: block;\n}\n.btn {\n\tdisplay: block;\n\tpadding: 10px 30px;\n\tbackground-color: #87F;\n\tborder-radius: 4px;\n\tcolor: #FFF;\n\ttext-align: center;\n\tfont-size: 1rem;\n\tbox-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);\n\ttransition: all 0.3s;\n\tborder: none;\n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\n\tcursor: pointer;\n}\n.btn:hover {\n\tbackground-color: #65D;\n\ttransform: scale(1.1);\n}\n.btn-disabled,\n.btn-disabled:hover {\n\tbackground-color: #BBC;\n\ttransform: scale(1);\n}\n#app {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmin-height: 100vh;\n}\nmain {\n\tflex: 1;\n}\nlabel {\n\tmargin-bottom: 5px;\n}\ninput,\ntextarea {\n\tborder-radius: 4px;\n\tborder: 1px solid white;\n\tpadding: 15px;\n\tbox-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);\n\ttransition: all .3s;\n\tfont-size: 1rem;\n\tfont-family: 'Avenir', Helvetica, Arial, sans-serif;\n\tmargin-bottom: 15px;\n\twidth: 100%;\n}\ninput:hover,\ninput:focus,\ntextarea:hover\ntextarea:focus {\n\toutline: none;\n\tbox-shadow: rgba(30, 60, 90, 0.2);\n\tborder-color: #87F;\n}\n.v-enter,\n.v-leave-to {\n\topacity: 0;\n}\n.v-enter {\n\ttransform: translate3d(0, -20px, 0);\n}\n.v-leave-to {\n\ttransform: translate3d(0, 20px, 0);\n}\n.v-enter-active, .v-leave-active {\n\ttransition: all .3s;\n}\n", ""]);
 
 // exports
 
@@ -3501,7 +3499,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nh2[data-v-2e88edf5] {\r\n\ttext-align: center;\r\n\tmargin: 40px 0 10px 0;\n}\n.btn[data-v-2e88edf5] {\r\n\twidth: 100%;\r\n\tmax-width: 300px;\r\n\tmargin: 0 auto;\n}\n.btn-form[data-v-2e88edf5] {\r\n\tmax-width: 100%;\n}\r\n", ""]);
+exports.push([module.i, "\nh2[data-v-2e88edf5] {\n\ttext-align: center;\n\tmargin: 40px 0 10px 0;\n}\n.btn[data-v-2e88edf5] {\n\twidth: 100%;\n\tmax-width: 300px;\n\tmargin: 0 auto;\n}\n.btn-form[data-v-2e88edf5] {\n\tmax-width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -3520,7 +3518,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh2[data-v-56d230de] {\r\n\tmargin-top: 40px;\r\n\tmargin-bottom: 20px;\n}\n.btn[data-v-56d230de] {\r\n\tbackground-color: #E80;\n}\r\n", ""]);
+exports.push([module.i, "\nh2[data-v-56d230de] {\n\tmargin-top: 40px;\n\tmargin-bottom: 20px;\n}\n.btn[data-v-56d230de] {\n\tbackground-color: #E80;\n}\n", ""]);
 
 // exports
 
@@ -3558,7 +3556,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.loading[data-v-25084412] {\r\n  text-align: center;\r\n  margin-top: 80px;\n}\n.loading span[data-v-25084412] {\r\n    display: inline-block;\r\n    width: 10px;\r\n    height: 10px;\r\n    border-radius: 50%;\r\n    background: #87F;\r\n    margin: 4px;\r\n    animation: dots-data-v-25084412 .6s cubic-bezier(0.6, 0.1, 1, 0.4) infinite alternate;\n}\n.loading span[data-v-25084412]:nth-child(1) {\r\n    animation-delay: 0.1s;\n}\n.loading span[data-v-25084412]:nth-child(2) {\r\n    animation-delay: 0.2s;\n}\n.loading span[data-v-25084412]:nth-child(3) {\r\n    animation-delay: 0.3s;\n}\n.loading span[data-v-25084412]:nth-child(4) {\r\n    animation-delay: 0.4s;\n}\n@keyframes dots-data-v-25084412 {\nfrom {\r\n        transform: translate3d(0, 0, 0);\n}\nto {\r\n        transform: translate3d(0, 30px, 0);\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.loading[data-v-25084412] {\n  text-align: center;\n  margin-top: 80px;\n}\n.loading span[data-v-25084412] {\n    display: inline-block;\n    width: 10px;\n    height: 10px;\n    border-radius: 50%;\n    background: #87F;\n    margin: 4px;\n    animation: dots-data-v-25084412 .6s cubic-bezier(0.6, 0.1, 1, 0.4) infinite alternate;\n}\n.loading span[data-v-25084412]:nth-child(1) {\n    animation-delay: 0.1s;\n}\n.loading span[data-v-25084412]:nth-child(2) {\n    animation-delay: 0.2s;\n}\n.loading span[data-v-25084412]:nth-child(3) {\n    animation-delay: 0.3s;\n}\n.loading span[data-v-25084412]:nth-child(4) {\n    animation-delay: 0.4s;\n}\n@keyframes dots-data-v-25084412 {\nfrom {\n        transform: translate3d(0, 0, 0);\n}\nto {\n        transform: translate3d(0, 30px, 0);\n}\n}\n", ""]);
 
 // exports
 
@@ -3577,7 +3575,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nform[data-v-ccaf57c4] {\r\n\tdisplay: grid;\r\n\tgrid-template-columns: 100px 1fr;\r\n\talign-items: center;\r\n\tmargin-bottom: 60px;\n}\n.btn[data-v-ccaf57c4] {\r\n\tgrid-column: 2;\n}\ntextarea[data-v-ccaf57c4] {\r\n\tresize: vertical;\r\n\tmin-height: 80px;\n}\r\n", ""]);
+exports.push([module.i, "\nform[data-v-ccaf57c4] {\n\tdisplay: grid;\n\tgrid-template-columns: 100px 1fr;\n\talign-items: center;\n\tmargin-bottom: 60px;\n}\n.btn[data-v-ccaf57c4] {\n\tgrid-column: 2;\n}\ntextarea[data-v-ccaf57c4] {\n\tresize: vertical;\n\tmin-height: 80px;\n}\n", ""]);
 
 // exports
 
@@ -3615,7 +3613,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.product[data-v-34b8f9c2] {\r\n\tdisplay: grid;\r\n\tgrid-template-columns: minmax(100px, 200px) 1fr;\r\n\tgrid-gap: 20px;\r\n\tmargin-bottom: 40px;\r\n\tposition: relative;\n}\n.info[data-v-34b8f9c2] {\r\n\talign-self: end;\n}\n.product-image[data-v-34b8f9c2] {\r\n\tborder-radius: 4px;\r\n\toverflow: hidden;\r\n\theight: 100px;\n}\n@media screen and (max-width: 500px){\n.product[data-v-34b8f9c2] {\r\n\t\tgrid-template-columns: 1fr;\r\n\t\tgrid-gap: 10px;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.product[data-v-34b8f9c2] {\n\tdisplay: grid;\n\tgrid-template-columns: minmax(100px, 200px) 1fr;\n\tgrid-gap: 20px;\n\tmargin-bottom: 40px;\n\tposition: relative;\n}\n.info[data-v-34b8f9c2] {\n\talign-self: end;\n}\n.product-image[data-v-34b8f9c2] {\n\tborder-radius: 4px;\n\toverflow: hidden;\n\theight: 100px;\n}\n@media screen and (max-width: 500px){\n.product[data-v-34b8f9c2] {\n\t\tgrid-template-columns: 1fr;\n\t\tgrid-gap: 10px;\n}\n}\n", ""]);
 
 // exports
 
@@ -3654,7 +3652,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nform[data-v-5f3d7c3c] {\r\n\tmax-width: 600px;\r\n\tmargin: 30px auto 60px auto;\r\n\tposition: relative;\r\n\tpadding: 0 10px;\n}\n#search[data-v-5f3d7c3c] {\r\n\twidth: 100%;;\r\n\tpadding: 20px;\r\n\tborder: none;\n}\n#search[data-v-5f3d7c3c]:focus, #search[data-v-5f3d7c3c]:hover {\r\n\ttransform: scale(1.1);\n}\n#magnifier[data-v-5f3d7c3c] {\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: -40px;\r\n\twidth: 62px;\r\n\theight:62px;\r\n\tbackground: url(" + escape(__webpack_require__(/*! ../../assets/search.svg */ "./resources/js/assets/search.svg")) + ") no-repeat center;\r\n\ttext-indent: -150px;\r\n\tborder: none;\r\n\tbox-shadow: none;\r\n\tcursor: pointer;\n}\r\n", ""]);
+exports.push([module.i, "\nform[data-v-5f3d7c3c] {\n\tmax-width: 600px;\n\tmargin: 30px auto 60px auto;\n\tposition: relative;\n\tpadding: 0 10px;\n}\n#search[data-v-5f3d7c3c] {\n\twidth: 100%;;\n\tpadding: 20px;\n\tborder: none;\n}\n#search[data-v-5f3d7c3c]:focus, #search[data-v-5f3d7c3c]:hover {\n\ttransform: scale(1.1);\n}\n#magnifier[data-v-5f3d7c3c] {\n\tposition: absolute;\n\ttop: 0;\n\tright: -40px;\n\twidth: 62px;\n\theight:62px;\n\tbackground: url(" + escape(__webpack_require__(/*! ../../assets/search.svg */ "./resources/js/assets/search.svg")) + ") no-repeat center;\n\ttext-indent: -150px;\n\tborder: none;\n\tbox-shadow: none;\n\tcursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -3673,7 +3671,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nfooter[data-v-2a04c4de] {\r\n\tbackground-color: #87F;\r\n\tpadding: 20px 0;\r\n\ttext-align: center;\r\n\tfont-size: 1.2rem;\r\n\tcolor: #FFF;\r\n\tposition: relative;\r\n\ttop: 75px;\n}\r\n", ""]);
+exports.push([module.i, "\nfooter[data-v-2a04c4de] {\n\tbackground-color: #87F;\n\tpadding: 20px 0;\n\ttext-align: center;\n\tfont-size: 1.2rem;\n\tcolor: #FFF;\n\tposition: relative;\n\ttop: 75px;\n}\n", ""]);
 
 // exports
 
@@ -3711,7 +3709,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nform[data-v-08a5751a],\r\n.user[data-v-08a5751a] {\r\n\tdisplay: grid;\r\n\tgrid-template-columns: 80px 1fr;\r\n\talign-items: center;\n}\n.user[data-v-08a5751a] {\r\n\tgrid-column: 1 / 3;\n}\n.button[data-v-08a5751a] {\r\n\tgrid-column: 2;\r\n\tmargin-top: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\nform[data-v-08a5751a],\n.user[data-v-08a5751a] {\n\tdisplay: grid;\n\tgrid-template-columns: 80px 1fr;\n\talign-items: center;\n}\n.user[data-v-08a5751a] {\n\tgrid-column: 1 / 3;\n}\n.button[data-v-08a5751a] {\n\tgrid-column: 2;\n\tmargin-top: 10px;\n}\n", ""]);
 
 // exports
 
@@ -3730,7 +3728,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nh1[data-v-b3c5cf30] {\r\n\tcolor: #87F;\r\n\tfont-size: 2rem;\r\n\ttext-align: center;\r\n\tmargin-top: 40px;\n}\r\n", ""]);
+exports.push([module.i, "\nh1[data-v-b3c5cf30] {\n\tcolor: #87F;\n\tfont-size: 2rem;\n\ttext-align: center;\n\tmargin-top: 40px;\n}\n", ""]);
 
 // exports
 
@@ -3749,7 +3747,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.login[data-v-3b6adb30] {\r\n\tmax-width: 500px;\r\n\tmargin: 0 auto;\r\n\tpadding: 0 20px;\n}\nh1[data-v-3b6adb30] {\r\n\ttext-align: center;\r\n\tfont-size: 2rem;\r\n\tmargin-top: 40px;\r\n\tcolor: #87F;\n}\nform[data-v-3b6adb30] {\r\n\tdisplay: grid;\n}\n.btn[data-v-3b6adb30] {\r\n\twidth: 100%;\r\n\tmax-width: 300px;\r\n\tmargin-left: auto;\r\n\tmargin-right: auto;\n}\n.forgot-password[data-v-3b6adb30] {\r\n\ttext-align: center;\r\n\tmargin: 20px auto 0 auto;\n}\n.forgot-password a[data-v-3b6adb30]:hover {\r\n\tcolor: #87F;\r\n\ttext-decoration: underline;\n}\r\n", ""]);
+exports.push([module.i, "\n.login[data-v-3b6adb30] {\n\tmax-width: 500px;\n\tmargin: 0 auto;\n\tpadding: 0 20px;\n}\nh1[data-v-3b6adb30] {\n\ttext-align: center;\n\tfont-size: 2rem;\n\tmargin-top: 40px;\n\tcolor: #87F;\n}\nform[data-v-3b6adb30] {\n\tdisplay: grid;\n}\n.btn[data-v-3b6adb30] {\n\twidth: 100%;\n\tmax-width: 300px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n.forgot-password[data-v-3b6adb30] {\n\ttext-align: center;\n\tmargin: 20px auto 0 auto;\n}\n.forgot-password a[data-v-3b6adb30]:hover {\n\tcolor: #87F;\n\ttext-decoration: underline;\n}\n", ""]);
 
 // exports
 
@@ -3826,7 +3824,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nh2[data-v-5521ea7a] {\r\n\tmargin-bottom: 20px;\n}\n.delete-product[data-v-5521ea7a] {\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 0;\r\n\tbackground: url(" + escape(__webpack_require__(/*! ../../assets/remove.svg */ "./resources/js/assets/remove.svg")) + ") no-repeat center;\r\n\twidows: 24px;\r\n\theight: 24px;\r\n\ttext-indent: -140px;\r\n\toverflow: hidden;\r\n\tcursor: pointer;\r\n\tborder: none;\n}\n.list-enter[data-v-5521ea7a],\r\n.list-leave-to[data-v-5521ea7a] {\r\n\topacity: 0;\r\n\ttransform: translate3d(20px, 0, 0);\n}\n.list-enter-active[data-v-5521ea7a],\r\n.list-leave-active[data-v-5521ea7a] {\r\n\ttransition: all .3s;\n}\r\n", ""]);
+exports.push([module.i, "\nh2[data-v-5521ea7a] {\n\tmargin-bottom: 20px;\n}\n.delete-product[data-v-5521ea7a] {\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\tbackground: url(" + escape(__webpack_require__(/*! ../../assets/remove.svg */ "./resources/js/assets/remove.svg")) + ") no-repeat center;\n\twidows: 24px;\n\theight: 24px;\n\ttext-indent: -140px;\n\toverflow: hidden;\n\tcursor: pointer;\n\tborder: none;\n}\n.list-enter[data-v-5521ea7a],\n.list-leave-to[data-v-5521ea7a] {\n\topacity: 0;\n\ttransform: translate3d(20px, 0, 0);\n}\n.list-enter-active[data-v-5521ea7a],\n.list-leave-active[data-v-5521ea7a] {\n\ttransition: all .3s;\n}\n", ""]);
 
 // exports
 
@@ -24678,7 +24676,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/pattern.svg?90906e2358631aa76e7cafb648a64f7d";
+module.exports = "/images/pattern.svg?e3c6dc204fa9b5303b016036f88b5696";
 
 /***/ }),
 
@@ -24689,7 +24687,7 @@ module.exports = "/images/pattern.svg?90906e2358631aa76e7cafb648a64f7d";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/ranek.svg?65a584bc7f40f0da95ae980d9dd0813d";
+module.exports = "/images/ranek.svg?e7a4871b9eb432c607cd35bbfd273c20";
 
 /***/ }),
 
@@ -24700,7 +24698,7 @@ module.exports = "/images/ranek.svg?65a584bc7f40f0da95ae980d9dd0813d";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/remove.svg?e68758ae48a950d33c08f3a2feaf01b7";
+module.exports = "/images/remove.svg?b883097a798e6f810d3a42b07fbb788c";
 
 /***/ }),
 
@@ -24711,7 +24709,7 @@ module.exports = "/images/remove.svg?e68758ae48a950d33c08f3a2feaf01b7";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/search.svg?0bff5cc9e4df3e6a5961b7c575e342cc";
+module.exports = "/images/search.svg?2ddf0e582d4eaa828ee46cbcdd7cc8f4";
 
 /***/ }),
 
@@ -25154,15 +25152,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/Products/Pagination.vue ***!
   \*********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pagination_vue_vue_type_template_id_53db7eac_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pagination.vue?vue&type=template&id=53db7eac&scoped=true& */ "./resources/js/components/Products/Pagination.vue?vue&type=template&id=53db7eac&scoped=true&");
 /* harmony import */ var _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pagination.vue?vue&type=script&lang=js& */ "./resources/js/components/Products/Pagination.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Pagination_vue_vue_type_style_index_0_id_53db7eac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css& */ "./resources/js/components/Products/Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Pagination_vue_vue_type_style_index_0_id_53db7eac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css& */ "./resources/js/components/Products/Pagination.vue?vue&type=style&index=0&id=53db7eac&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -25194,7 +25191,7 @@ component.options.__file = "resources/js/components/Products/Pagination.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/Products/Pagination.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -26909,7 +26906,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gustavo\Desktop\www\ranek\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/gustavo/projects/ranek/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })

@@ -35,7 +35,7 @@ services:
     image: dpage/pgadmin4
     container_name: ranek-pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: "example@example"
+      PGADMIN_DEFAULT_EMAIL: "admin@ranek.com"
       PGADMIN_DEFAULT_PASSWORD: "pgadmin1234"
     ports:
       - "15432:80"
@@ -53,16 +53,6 @@ services:
     volumes:
       - ./:/var/www
       - ./.docker/nginx:/etc/nginx/conf.d
-    networks:
-      - ranek
-
-  node:
-    image: node:15.3.0-alpine3.10
-    container_name: ranek-node
-    restart: unless-stopped
-    working_dir: /var/www/
-    volumes:
-      - ./:/var/www
     networks:
       - ranek
 
