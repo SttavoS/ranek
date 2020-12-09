@@ -67,7 +67,7 @@
                 const pages = [];
                 const totalPages = Math.ceil(collectionLength / rowsPerPage);
                 const halfWay = Math.ceil(paginationRange / 2);
-                const position = '';
+                let position;
 
                 if (currentPage <= halfWay) {
                     position = 'start';
@@ -78,7 +78,7 @@
                 }
 
                 const ellipsesNeeded = paginationRange < totalPages;
-                const i = 1;
+                let i = 1;
                 while (i <= totalPages && i <= paginationRange) {
                     const pageNumber = this.calculatePageNumber(i, currentPage, paginationRange, totalPages);
                     const openingEllipsesNeeded = (i === 2 && (position === 'middle' || position === 'end'));
