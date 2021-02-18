@@ -1,11 +1,9 @@
-// require('./bootstrap');
 import Vue from 'vue';
 import PageLoading from './components/PageLoading.vue';
 import ErrorMessage from './components/ErrorMessage';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-
 
 Vue.config.productionTip = false;
 Vue.component('PageLoading', PageLoading);

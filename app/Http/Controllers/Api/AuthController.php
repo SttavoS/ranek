@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
@@ -27,6 +29,19 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
+    public function register(Request $request)
+    {
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return response()->json([
+            'user' => $user,
+        ], Response::HTTP_OK);
+    }
+
     /**
      * Log the user out (Invalidate the token).
      *
@@ -34,7 +49,8 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        auth('api')->logout();
+        Auth::logout();
+        // auth('api')->user()->logout();
 
         return response()->json([
             'message' => 'Successfully logged out',

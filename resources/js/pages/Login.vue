@@ -1,7 +1,7 @@
 <template>
 	<section class="login">
 		<h1>Login</h1>
-		<form>
+		<form @submit.prevent="handleLogin">
 			<label for="email">E-mail</label>
 			<input
 				type="email"
@@ -19,7 +19,6 @@
 			<button
 				type="submit"
 				class="btn"
-				@click.prevent="authenticate"
 			>
 				Logar
 			</button>
@@ -28,40 +27,32 @@
 		<p class="forgot-password">
 			<a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
 		</p>
-		<CreateAccount />
 	</section>
 </template>
 
 <script>
-import CreateAccount from '../components/Auth/CreateAccount.vue';
-import ErrorMessage from '../components/ErrorMessage';
+import ErrorMessage from '../components/ErrorMessage.vue';
 
 export default {
 	name: 'Login',
-	components: {
-		CreateAccount,
-		ErrorMessage
-	},
+	components: { ErrorMessage },
 	data() {
 		return {
-			login: {
-				email: '',
-				password: '',
-			},
-			errors: []
+			hasError: false,
+            isLoading: false,
+            email: {
+                value: '',
+                errorMessage: ''
+            },
+            password: {
+                value: '',
+                errorMessage: ''
+            }
 		};
 	},
 	methods: {
-		async authenticate() {
-			this.errors = [];
-			await this.$store.dispatch('authenticateUser', this.login)
-				.then(() => {
-					this.$router.push({ name: 'user.edit' });
-				})
-				.catch((error) => {
-					console.log(error);
-					this.errors.push(error.response.data.message);
-				});
+		async handleLogin() {
+
 		},
 	},
 	mounted() {

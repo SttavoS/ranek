@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
-class apiProtectedRoute extends BaseMiddleware
+class ApiProtectedRoute extends BaseMiddleware
 {
     /**
      * Handle an incoming request.
