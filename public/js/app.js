@@ -2005,7 +2005,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _UserForm_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserForm.vue */ "./resources/js/components/UserForm.vue");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 
 
@@ -2063,7 +2063,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     createTransaction: function createTransaction() {
       var _this = this;
 
-      return _services_api__WEBPACK_IMPORTED_MODULE_2__["default"].post('/transaction', this.purchase).then(function () {
+      return !(function webpackMissingModule() { var e = new Error("Cannot find module '../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).post('/transaction', this.purchase).then(function () {
         _this.$router.push({
           name: 'user.purchases'
         });
@@ -2179,7 +2179,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 //
 //
 //
@@ -2244,7 +2244,7 @@ __webpack_require__.r(__webpack_exports__);
       var button = event.currentTarget;
       button.value = 'Adcionando...';
       button.setAttribute('disabled', '');
-      _services_api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/product', data).then(function () {
+      !(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).post('/product', data).then(function () {
         _this.$store.dispatch('getUserProducts');
       });
       button.removeAttribute('disabled');
@@ -2425,7 +2425,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pagination_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pagination.vue */ "./resources/js/components/Products/Pagination.vue");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _helpers_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers/index */ "./resources/js/helpers/index.js");
 //
 //
@@ -2485,7 +2485,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.products = null;
       var url = page ? "/products?page=".concat(page) : '/products';
-      _services_api__WEBPACK_IMPORTED_MODULE_1__["default"].get(url).then(function (response) {
+      !(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).get(url).then(function (response) {
         _this.products = response.data.products.data;
         _this.pagination = response.data.products;
       });
@@ -2610,7 +2610,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 //
 //
 //
@@ -2784,7 +2784,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
 //
 //
 //
@@ -3063,7 +3062,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_UserForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/UserForm */ "./resources/js/components/UserForm.vue");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 //
 //
 //
@@ -3084,7 +3083,7 @@ __webpack_require__.r(__webpack_exports__);
     updateUser: function updateUser() {
       var _this = this;
 
-      _services_api__WEBPACK_IMPORTED_MODULE_1__["default"].put("/users/".concat(this.$store.state.user.id), this.$store.state.user).then(function () {
+      !(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).put("/users/".concat(this.$store.state.user.id), this.$store.state.user).then(function () {
         _this.$store.dispatch('getUser');
 
         _this.$router.push({
@@ -3159,7 +3158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Products_AddProduct_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Products/AddProduct.vue */ "./resources/js/components/Products/AddProduct.vue");
 /* harmony import */ var _components_Products_ProductItem_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Products/ProductItem.vue */ "./resources/js/components/Products/ProductItem.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3210,7 +3209,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var confirm = window.confirm('Deseja realmente deletar esse produto?');
 
       if (confirm) {
-        _services_api__WEBPACK_IMPORTED_MODULE_3__["default"]["delete"]("/products/".concat(id)).then(function () {
+        !(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())["delete"]("/products/".concat(id)).then(function () {
           _this.getUserProducts();
         })["catch"](function (error) {
           console.log(error.response);
@@ -3242,7 +3241,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Products_ProductItem_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Products/ProductItem.vue */ "./resources/js/components/Products/ProductItem.vue");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -3288,7 +3287,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getPurchases: function getPurchases() {
       var _this = this;
 
-      _services_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/transaction?buyer_id=".concat(this.user.id)).then(function (response) {
+      !(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).get("/transaction?buyer_id=".concat(this.user.id)).then(function (response) {
         _this.purchases = response.data;
       });
     }
@@ -3317,7 +3316,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Products_ProductItem_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/Products/ProductItem.vue */ "./resources/js/components/Products/ProductItem.vue");
-/* harmony import */ var _services_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/api */ "./resources/js/services/api.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -3371,7 +3370,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getSales: function getSales() {
       var _this = this;
 
-      _services_api__WEBPACK_IMPORTED_MODULE_1__["default"].get("/transaction?seller_id=".concat(this.user.id)).then(function (response) {
+      !(function webpackMissingModule() { var e = new Error("Cannot find module '../../services/api'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).get("/transaction?seller_id=".concat(this.user.id)).then(function (response) {
         _this.sales = response.data;
       });
     }
@@ -26519,17 +26518,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/services/api.js":
-/*!**************************************!*\
-  !*** ./resources/js/services/api.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/home/gustavo/codebase/projects/ranek/resources/js/services/api.js'");
-
-/***/ }),
-
 /***/ "./resources/js/services/auth.js":
 /*!***************************************!*\
   !*** ./resources/js/services/auth.js ***!
@@ -26842,7 +26830,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/gustavo/codebase/projects/ranek/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
