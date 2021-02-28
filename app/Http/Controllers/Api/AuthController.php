@@ -3,84 +3,85 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
-use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
 {
     /**
-     * Get a JWT via given credentials.
+     * Register Endpoint
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @param RegisterRequest $request
+     * @return JsonResponse response()
      */
-    public function login(Request $request)
+    public function register(RegisterRequest $request): JsonResponse
     {
-        $credentials = $request->only(['email', 'password']);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-        if (!$token = auth('api')->attempt($credentials)) {
+        return response()->json($user);
+    }
+
+    /**
+     * Login Endpoint
+     *
+     * @param LoginRequest $request
+     * @return JsonResponse response()
+     */
+    public function login(LoginRequest $request): JsonResponse
+    {
+        $credentials = request(['email', 'password']);
+        if (!auth()->attempt($credentials)) {
             return response()->json([
-                'error' => 'Unauthorized',
-            ], Response::HTTP_UNAUTHORIZED);
+                'message' => 'The given data was invalid.',
+                'errors' => [
+                    'password' => [
+                        'Invalid credentials',
+                    ],
+                ],
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        return $this->respondWithToken($token);
-    }
-
-    public function register(Request $request)
-    {
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
+        $user = User::where('email', $request->email)->first();
+        $authToken = $user->createToken('auth-token')->plainTextToken;
 
         return response()->json([
-            'user' => $user,
-        ], Response::HTTP_OK);
-    }
-
-    /**
-     * Log the user out (Invalidate the token).
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function logout()
-    {
-        Auth::logout();
-        // auth('api')->user()->logout();
-
-        return response()->json([
-            'message' => 'Successfully logged out',
+            'access_token' => $authToken,
         ]);
     }
 
     /**
-     * Get the authenticated User.
+     * Logout Endpoint
+     * Revoke the current user auth token
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @param Request $request
+     * @return void
      */
-    public function me()
+    public function logout(Request $request): JsonResponse
     {
-        return response()->json(auth('api')->user());
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'message' => 'Logout successfully',
+        ]);
     }
 
     /**
-     * Get the token array structure.
+     * Current User Data Endpoint
+     * Retrieve the User data
      *
-     * @param  string $token
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * @return User
      */
-    protected function respondWithToken($token)
+    public function me(): User
     {
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => auth('api')->factory()->getTTL() * 60,
-            'user' => auth('api')->user(),
-        ]);
+        return auth()->user();
     }
 }

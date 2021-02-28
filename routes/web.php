@@ -14,9 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/{any}', [SpaController::class, 'index'])->where('any', '.*');
 Route::get('{path}', SpaController::class)->where('path', '(.*)');
